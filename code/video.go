@@ -9,7 +9,7 @@ import (
 	"github.com/zhangyiming748/archive"
 )
 
-func FindAndCovertImmediately(root string, fhd bool) {
+func FindVideoAndCovertImmediately(root string, fhd bool) {
 	filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return nil // 忽略错误，继续遍历
@@ -23,6 +23,7 @@ func FindAndCovertImmediately(root string, fhd bool) {
 		return nil
 	})
 }
+
 func isVideo(fp string) bool {
 	file, _ := os.Open(fp)
 	defer file.Close()

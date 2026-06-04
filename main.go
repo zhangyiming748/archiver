@@ -28,7 +28,7 @@ func main() {
 		Short: "Convert video files to H265 format",
 		Long:  "Find all video files in the specified directory and convert them to H265 format",
 		Run: func(cmd *cobra.Command, args []string) {
-			code.FindAndCovertImmediately(rootDir, fhd)
+			code.FindVideoAndCovertImmediately(rootDir, fhd)
 			fmt.Printf("Video conversion completed for directory: %s\n", rootDir)
 		},
 	}
