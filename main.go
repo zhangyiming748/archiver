@@ -10,9 +10,11 @@ import (
 )
 
 var (
-	version = "1.0.0"
-	rootDir string
-	fhd     bool
+	version   = "dev"
+	buildTime = "unknown"
+	gitCommit = "unknown"
+	rootDir   string
+	fhd       bool
 )
 
 func main() {
@@ -38,6 +40,18 @@ func main() {
 		Short: "Print the version number",
 		Run: func(cmd *cobra.Command, args []string) {
 			fmt.Printf("archiver version %s\n", version)
+			fmt.Printf("Build time: %s\n", buildTime)
+			fmt.Printf("Git commit: %s\n", gitCommit)
+		},
+	}
+
+	var imageCmd = &cobra.Command{
+		Use:   "image",
+		Short: "Convert image files to AVIF format",
+		Long:  "Find all image files in the specified directory and convert them to AVIF format",
+		Run: func(cmd *cobra.Command, args []string) {
+			code.FindImageAndCovertImmediately(rootDir)
+			fmt.Printf("Image conversion completed for directory: %s\n", rootDir)
 		},
 	}
 
@@ -45,7 +59,12 @@ func main() {
 	videoCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for video conversion")
 	videoCmd.MarkFlagRequired("dir")
 
+	imageCmd.Flags().StringVarP(&rootDir, "dir", "d", "", "Directory path to search for image files")
+	imageCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for image conversion")
+	imageCmd.MarkFlagRequired("dir")
+
 	rootCmd.AddCommand(videoCmd)
+	rootCmd.AddCommand(imageCmd)
 	rootCmd.AddCommand(versionCmd)
 
 	if err := rootCmd.Execute(); err != nil {
