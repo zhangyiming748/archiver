@@ -18,7 +18,7 @@ func FindImageAndCovertImmediately(root string) {
 			absPath, _ := filepath.Abs(path)
 			if isImage(absPath) {
 				if err := archive.Convert2AVIF(absPath); err != nil {
-					log.Printf("文件%s在处理的时候出现了错误:%v\n",absPath,err)
+					log.Printf("文件%s在处理的时候出现了错误:%v\n", absPath, err)
 				}
 			}
 		}
