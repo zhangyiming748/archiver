@@ -15,6 +15,7 @@ var (
 	gitCommit = "unknown"
 	rootDir   string
 	fhd       bool
+	force     bool
 )
 
 func main() {
@@ -30,7 +31,7 @@ func main() {
 		Short: "Convert video files to H265 format",
 		Long:  "Find all video files in the specified directory and convert them to H265 format",
 		Run: func(cmd *cobra.Command, args []string) {
-			code.FindVideoAndCovertImmediately(rootDir, fhd)
+			code.FindVideoAndCovertImmediately(rootDir, fhd, force)
 			fmt.Printf("Video conversion completed for directory: %s\n", rootDir)
 		},
 	}
@@ -57,6 +58,7 @@ func main() {
 
 	videoCmd.Flags().StringVarP(&rootDir, "dir", "d", "", "Directory path to search for video files")
 	videoCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for video conversion")
+	videoCmd.Flags().BoolVar(&force, "force", false, "Force overwrite existing files")
 	videoCmd.MarkFlagRequired("dir")
 
 	imageCmd.Flags().StringVarP(&rootDir, "dir", "d", "", "Directory path to search for image files")

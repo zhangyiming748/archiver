@@ -34,6 +34,8 @@ github.com/zhangyiming748/FastMediaInfo v0.0.7 h1:ltIZphycCxY+Wyb6tWJODLEr9gQWm/
 github.com/zhangyiming748/FastMediaInfo v0.0.7/go.mod h1:vO7MyXVTh/P4DRIuBdFXP14kV5J54Jqemem+xtsC3HI=
 github.com/zhangyiming748/archive v0.1.16 h1:QCqpOnobJjNxYrGofISQqcWk0qFBlf9jvrIGFbMK9ws=
 github.com/zhangyiming748/archive v0.1.16/go.mod h1:atp8bCiK4p31x0HMu22OtmM5RkATSflGf1aCampWd1I=
+github.com/zhangyiming748/archive v0.2.1 h1:ey//lxTQgSLmKkHu/NnEopZQviAZ2qXoQuhrTCp1b/U=
+github.com/zhangyiming748/archive v0.2.1/go.mod h1:atp8bCiK4p31x0HMu22OtmM5RkATSflGf1aCampWd1I=
 github.com/zhangyiming748/finder v0.0.9 h1:RsZp6A4Qxe+OpZ+qW30v0cBE6Q+fG+ETEz/NUyDviJ0=
 github.com/zhangyiming748/finder v0.0.9/go.mod h1:92Nl48xt4VYxeyQIlYuxvhX+sCVba9SlKEWKMHzzDdA=
 golang.org/x/mod v0.35.0 h1:Ww1D637e6Pg+Zb2KrWfHQUnH2dQRLBQyAtpr/haaJeM=
@@ -74,6 +76,8 @@ modernc.org/sortutil v1.2.1 h1:+xyoGf15mM3NMlPDnFqrteY07klSFxLElE2PVuWIJ7w=
 modernc.org/sortutil v1.2.1/go.mod h1:7ZI3a3REbai7gzCLcotuw9AC4VZVpYMjDzETGsSMqJE=
 modernc.org/sqlite v1.51.0 h1:aH/MMSoayAIhozZ7uJbVTT9QO/VhzBf0J9tymmmuC/U=
 modernc.org/sqlite v1.51.0/go.mod h1:tcNzv5p84E0skkmJn038y+hWJbLQXQqEnQfeh5r2JLM=
+modernc.org/sqlite v1.52.0 h1:p4dhYh2tXZCiyaqHwRVJDjIGKWyXayiQpThxgDzJaxo=
+modernc.org/sqlite v1.52.0/go.mod h1:tcNzv5p84E0skkmJn038y+hWJbLQXQqEnQfeh5r2JLM=
 modernc.org/strutil v1.2.1 h1:UneZBkQA+DX2Rp35KcM69cSsNES9ly8mQWD71HKlOA0=
 modernc.org/strutil v1.2.1/go.mod h1:EHkiggD70koQxjVdSBM3JKM7k6L0FbGE5eymy9i3B9A=
 modernc.org/token v1.1.0 h1:Xl7Ap9dKaEs5kLoOQeQmPWevfnk/DM5qcLcYlA8ys6Y=

@@ -9,7 +9,7 @@ import (
 	"github.com/zhangyiming748/archive"
 )
 
-func FindVideoAndCovertImmediately(root string, fhd bool) {
+func FindVideoAndCovertImmediately(root string, fhd, force bool) {
 	filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return nil // 忽略错误，继续遍历
@@ -17,7 +17,7 @@ func FindVideoAndCovertImmediately(root string, fhd bool) {
 		if !info.IsDir() {
 			absPath, _ := filepath.Abs(path)
 			if isVideo(absPath) {
-				archive.Convert2H265(absPath, fhd)
+				archive.Convert2H265(absPath, fhd, force)
 			}
 		}
 		return nil
