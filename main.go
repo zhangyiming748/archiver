@@ -56,6 +56,23 @@ func main() {
 			fmt.Printf("Image conversion completed for directory: %s\n", rootDir)
 		},
 	}
+	// 创建旋转命令
+	var rotateCmd = &cobra.Command{
+		Use:   "rotate",
+		Short: "Rotate video files",
+		Long:  "Rotate all video files in specified directory",
+		Run: func(cmd *cobra.Command, args []string) {
+			dir, _ := cmd.Flags().GetString("dir")
+			rotateDirection, _ := cmd.Flags().GetString("rotate")
+			fmt.Printf("Starting video rotation task...\nDirectory: %s\nDirection: %s degrees\n", dir, rotateDirection)
+			code.RotateVideos(dir, rotateDirection)
+		},
+	}
+
+	// 为 rotate 命令添加标志
+	rotateCmd.Flags().StringP("dir", "d", "./", "Directory path for video rotation (required)")
+	rotateCmd.Flags().StringP("rotate", "r", "90", "Rotation direction: 90, 270")
+	// rotateCmd.MarkFlagRequired("dir")
 
 	videoCmd.Flags().StringVarP(&rootDir, "dir", "d", "", "Directory path to search for video files")
 	videoCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for video conversion")
@@ -70,6 +87,7 @@ func main() {
 	rootCmd.AddCommand(videoCmd)
 	rootCmd.AddCommand(imageCmd)
 	rootCmd.AddCommand(versionCmd)
+	rootCmd.AddCommand(rotateCmd)
 
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
