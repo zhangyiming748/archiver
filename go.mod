@@ -5,7 +5,7 @@ go 1.26.3
 require (
 	github.com/h2non/filetype v1.1.3
 	github.com/spf13/cobra v1.8.0
-	github.com/zhangyiming748/archive v0.2.5
+	github.com/zhangyiming748/archive v0.2.6
 )
 
 require (
