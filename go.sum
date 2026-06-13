@@ -50,6 +50,8 @@ github.com/zhangyiming748/FastMediaInfo v0.0.7 h1:ltIZphycCxY+Wyb6tWJODLEr9gQWm/
 github.com/zhangyiming748/FastMediaInfo v0.0.7/go.mod h1:vO7MyXVTh/P4DRIuBdFXP14kV5J54Jqemem+xtsC3HI=
 github.com/zhangyiming748/archive v0.2.4 h1:tgpumkC/qnhqA10L3l4R+bM5ARSoOICUT39yik9mpLo=
 github.com/zhangyiming748/archive v0.2.4/go.mod h1:G4pwhs6Nm19eMz+VL7fpjtScZfH1VG0U+LozxbsmCsA=
+github.com/zhangyiming748/archive v0.2.5 h1:tezpcWYyZy7huVBBUfiTC9KCjJ+FGFe1fITE5WcKpZE=
+github.com/zhangyiming748/archive v0.2.5/go.mod h1:G4pwhs6Nm19eMz+VL7fpjtScZfH1VG0U+LozxbsmCsA=
 github.com/zhangyiming748/finder v0.0.9 h1:RsZp6A4Qxe+OpZ+qW30v0cBE6Q+fG+ETEz/NUyDviJ0=
 github.com/zhangyiming748/finder v0.0.9/go.mod h1:92Nl48xt4VYxeyQIlYuxvhX+sCVba9SlKEWKMHzzDdA=
 golang.org/x/mod v0.36.0 h1:JJjpVx6myfUsUdAzZuOSTTmRE0PfZeNWzzvKrP7amb4=
@@ -83,6 +85,8 @@ modernc.org/goabi0 v0.2.0 h1:HvEowk7LxcPd0eq6mVOAEMai46V+i7Jrj13t4AzuNks=
 modernc.org/goabi0 v0.2.0/go.mod h1:CEFRnnJhKvWT1c1JTI3Avm+tgOWbkOu5oPA8eH8LnMI=
 modernc.org/libc v1.73.0 h1:Y/KmTxbIN5T3x+NFjYOzV/+Ha7wKClfIecmTCTuYlqQ=
 modernc.org/libc v1.73.0/go.mod h1:DXZ3eO8qMCNn2SnmTNCiC71nJ9Rcq3PsnpU6Vc4rWK8=
+modernc.org/libc v1.73.1 h1:HMa/TQJY2Z8ZjqBRbVJMLjBhmxTOwN2aMcxNrT01Dbc=
+modernc.org/libc v1.73.1/go.mod h1:DXZ3eO8qMCNn2SnmTNCiC71nJ9Rcq3PsnpU6Vc4rWK8=
 modernc.org/mathutil v1.7.1 h1:GCZVGXdaN8gTqB1Mf/usp1Y/hSqgI2vAGGP4jZMCxOU=
 modernc.org/mathutil v1.7.1/go.mod h1:4p5IwJITfppl0G4sUEDtCr4DthTaT47/N3aT6MhfgJg=
 modernc.org/memory v1.11.0 h1:o4QC8aMQzmcwCK3t3Ux/ZHmwFPzE6hf2Y5LbkRs+hbI=
