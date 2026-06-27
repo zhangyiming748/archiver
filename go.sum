@@ -50,6 +50,8 @@ github.com/zhangyiming748/FastMediaInfo v0.0.7 h1:ltIZphycCxY+Wyb6tWJODLEr9gQWm/
 github.com/zhangyiming748/FastMediaInfo v0.0.7/go.mod h1:vO7MyXVTh/P4DRIuBdFXP14kV5J54Jqemem+xtsC3HI=
 github.com/zhangyiming748/archive v0.2.6 h1:CSqm87IyXa5Sj3rnFYFhSOX8I/9SSxxbGRuSbhTbulk=
 github.com/zhangyiming748/archive v0.2.6/go.mod h1:G4pwhs6Nm19eMz+VL7fpjtScZfH1VG0U+LozxbsmCsA=
+github.com/zhangyiming748/archive v0.2.7 h1:yYbyO3YwBnBhF98KwV0N/p2IECXRw+SKBuYRz9wePiQ=
+github.com/zhangyiming748/archive v0.2.7/go.mod h1:G4pwhs6Nm19eMz+VL7fpjtScZfH1VG0U+LozxbsmCsA=
 github.com/zhangyiming748/finder v0.0.9 h1:RsZp6A4Qxe+OpZ+qW30v0cBE6Q+fG+ETEz/NUyDviJ0=
 github.com/zhangyiming748/finder v0.0.9/go.mod h1:92Nl48xt4VYxeyQIlYuxvhX+sCVba9SlKEWKMHzzDdA=
 golang.org/x/mod v0.36.0 h1:JJjpVx6myfUsUdAzZuOSTTmRE0PfZeNWzzvKrP7amb4=
