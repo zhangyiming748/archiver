@@ -80,6 +80,17 @@ func main() {
 		},
 	}
 
+	// 创建 smart 转换命令
+	var smartCmd = &cobra.Command{
+		Use:   "smart",
+		Short: "Smart convert video files to smaller H265 MP4 format",
+		Long:  "Find all video files in the specified directory and smart convert them to smaller H265 MP4 format",
+		Run: func(cmd *cobra.Command, args []string) {
+			code.FindVideoAndCovertSmallerMp4Immediately(rootDir, fhd, force)
+			fmt.Printf("Smart MP4 conversion completed for directory: %s\n", rootDir)
+		},
+	}
+
 	// 为 rotate 命令添加标志
 	rotateCmd.Flags().StringP("dir", "d", "./", "Directory path for video rotation (required)")
 	rotateCmd.Flags().StringP("rotate", "r", "90", "Rotation direction: 90, 270")
@@ -100,11 +111,17 @@ func main() {
 	imageCmd.Flags().IntVarP(&threads, "threads", "t", 4, "Number of threads to use for conversion")
 	imageCmd.MarkFlagRequired("dir")
 
+	smartCmd.Flags().StringVarP(&rootDir, "dir", "d", "", "Directory path to search for video files")
+	smartCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for smart MP4 conversion")
+	smartCmd.Flags().BoolVar(&force, "force", false, "Force overwrite existing files")
+	smartCmd.MarkFlagRequired("dir")
+
 	rootCmd.AddCommand(videoCmd)
 	rootCmd.AddCommand(imageCmd)
 	rootCmd.AddCommand(versionCmd)
 	rootCmd.AddCommand(rotateCmd)
 	rootCmd.AddCommand(mp4Cmd)
+	rootCmd.AddCommand(smartCmd)
 
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
