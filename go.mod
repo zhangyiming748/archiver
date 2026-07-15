@@ -1,4 +1,4 @@
-module archiver
+module github.com/zhangyiming748/archiver
 
 go 1.26.3
 
