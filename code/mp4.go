@@ -1,9 +1,9 @@
 package code
 
 import (
+	"github.com/zhangyiming748/archive"
 	"os"
 	"path/filepath"
-	"github.com/zhangyiming748/archive"
 )
 
 func FindVideoAndCovertMp4Immediately(root string, fhd, force bool) {
@@ -20,5 +20,3 @@ func FindVideoAndCovertMp4Immediately(root string, fhd, force bool) {
 		return nil
 	})
 }
-
-

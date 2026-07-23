@@ -58,6 +58,8 @@ github.com/zhangyiming748/archive v0.2.9 h1:NMdIk1AtQUXmKtwEQl9EOxAZV8uTKI7aBMqq
 github.com/zhangyiming748/archive v0.2.9/go.mod h1:G4pwhs6Nm19eMz+VL7fpjtScZfH1VG0U+LozxbsmCsA=
 github.com/zhangyiming748/archive v0.3.0 h1:1zdLMDsciVljS8Gv6KFP0JwT6zvMdKQR8avXvoF5mes=
 github.com/zhangyiming748/archive v0.3.0/go.mod h1:G4pwhs6Nm19eMz+VL7fpjtScZfH1VG0U+LozxbsmCsA=
+github.com/zhangyiming748/archive v0.3.1 h1:D4H5Je8cRE4RpCh+DwbjpkE+Fg2OmH1xHnl3SwJB6jw=
+github.com/zhangyiming748/archive v0.3.1/go.mod h1:atp8bCiK4p31x0HMu22OtmM5RkATSflGf1aCampWd1I=
 github.com/zhangyiming748/finder v0.0.9 h1:RsZp6A4Qxe+OpZ+qW30v0cBE6Q+fG+ETEz/NUyDviJ0=
 github.com/zhangyiming748/finder v0.0.9/go.mod h1:92Nl48xt4VYxeyQIlYuxvhX+sCVba9SlKEWKMHzzDdA=
 golang.org/x/mod v0.36.0 h1:JJjpVx6myfUsUdAzZuOSTTmRE0PfZeNWzzvKrP7amb4=

@@ -77,7 +77,7 @@ func RotateVideos(root, direction string) {
 		if !info.IsDir() {
 			absPath, _ := filepath.Abs(path)
 			if isVideo(absPath) {
-				archive.RotateVideo(absPath,archiveDirection)
+				archive.RotateVideo(absPath, archiveDirection)
 			}
 		}
 		return nil
@@ -151,7 +151,6 @@ func RotateVideo(src string, direction string) {
 		}
 	}
 }
-
 
 func hasNvidia() bool {
 	// 检查FFmpeg是否支持NVIDIA NVENC H.264编码器

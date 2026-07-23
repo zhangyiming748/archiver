@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"archiver/code"
+	"github.com/zhangyiming748/archiver/code"
 
 	"github.com/spf13/cobra"
 )
