@@ -129,6 +129,20 @@ func main() {
 	smartCmd.Flags().BoolVar(&force, "force", false, "Force overwrite existing files")
 	smartCmd.MarkFlagRequired("dir")
 
+	// 创建 novel 子命令：转换音频文件为有声小说格式
+	var novelCmd = &cobra.Command{
+		Use:   "novel",
+		Short: "Convert audio files to audiobook novel format",
+		Long:  "Find all audio files in the specified directory and convert them to audiobook novel format",
+		Run: func(cmd *cobra.Command, args []string) {
+			code.Novel(rootDir)
+			fmt.Printf("Novel audiobook conversion completed for directory: %s\n", rootDir)
+		},
+	}
+
+	// 为 novel 命令配置命令行参数
+	novelCmd.Flags().StringVarP(&rootDir, "dir", "d", ".", "Directory path to search for audio files")
+
 	// 将所有子命令注册到根命令
 	rootCmd.AddCommand(videoCmd)
 	rootCmd.AddCommand(imageCmd)
@@ -136,6 +150,7 @@ func main() {
 	rootCmd.AddCommand(rotateCmd)
 	rootCmd.AddCommand(mp4Cmd)
 	rootCmd.AddCommand(smartCmd)
+	rootCmd.AddCommand(novelCmd)
 
 	// 执行根命令，处理用户输入
 	if err := rootCmd.Execute(); err != nil {
