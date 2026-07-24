@@ -291,6 +291,7 @@ archiver video -d "D:\AI\舞蹈" --force
 **原因**：FFmpeg 在转换时，如果输出文件已存在，默认会询问是否覆盖。在非交互模式下无法接收用户输入，导致转换失败。
 
 **解决方案**：使用 `--force` 参数自动覆盖已存在的文件：
+
 ```bash
 archiver video -d /path/to/videos --force
 ```
@@ -304,12 +305,14 @@ archiver video -d /path/to/videos --force
 ### Q3: 支持哪些视频格式？
 
 Archiver 支持以下视频格式：
+
 - 标准视频格式：MP4, AVI, MKV, MOV, WMV, FLV 等（通过 filetype 库识别）
 - 特殊格式：RMVB, RM, VOB, FLV, TS, M2TS（通过后缀名识别）
 
 ### Q4: 支持哪些图片格式？
 
 支持所有常见图片格式，包括：
+
 - JPEG/JPG, PNG, GIF, BMP, TIFF, WebP 等
 
 ### Q5: 转换后的文件命名规则是什么？
@@ -317,12 +320,14 @@ Archiver 支持以下视频格式：
 - **视频转换（video/mp4/smart）**：直接替换原文件，不创建新文件
 - **图片转换**：直接替换原文件，不创建新文件
 - **视频旋转**：直接替换原文件，不创建新文件
+- **有声小说（novel）**：直接替换原文件，不创建新文件
 
 **注意**：所有转换和旋转操作都会直接修改原文件，建议先备份重要文件。
 
 ### Q6: 视频旋转支持哪些角度？
 
 目前支持两种旋转角度：
+
 - **90°**：顺时针旋转 90 度（`-r 90`）
 - **270°**：顺时针旋转 270 度（`-r 270`）
 
@@ -372,7 +377,7 @@ Archiver 支持以下视频格式：
 - **文件类型检测**：filetype v1.1.3
 - **视频处理**：FFmpeg (H265/HEVC 编码)
 - **图片处理**：libavif (AVIF 编码)
-- **外部依赖**：github.com/zhangyiming748/archive
+- **外部依赖**：[github.com/zhangyiming748/archive](https://github.com/zhangyiming748/archive)
 
 ## 📝 许可证
 
@@ -384,4 +389,4 @@ Archiver 支持以下视频格式：
 
 ## 📮 反馈
 
-如有问题或建议，请通过 GitHub Issues 联系我们。
+如有问题或建议，请通过 [GitHub Issues](https://github.com/zhangyiming748/archiver/issues) 联系我们。
