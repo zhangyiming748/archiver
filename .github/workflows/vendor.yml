@@ -1,0 +1,30 @@
+name: Vendor
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  vendor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Set up Go
+        uses: actions/setup-go@v7
+        with:
+          go-version: 'stable'
+
+      - name: Run go mod tidy
+        run: go mod tidy
+
+      - name: Run go mod vendor
+        run: go mod vendor
+
+      - name: Upload vendor directory
+        uses: actions/upload-artifact@v7
+        with:
+          name: vendor
+          path: vendor/

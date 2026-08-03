@@ -114,6 +114,17 @@ func main() {
 		},
 	}
 
+	// opus 命令：将音频文件转换为 Opus 格式
+	var opusCmd = &cobra.Command{
+		Use:   "opus",
+		Short: "Convert audio files to Opus format",
+		Long:  "Find all audio files in the specified directory and convert them to Opus format",
+		Run: func(cmd *cobra.Command, args []string) {
+			code.Opus(rootDir)
+			fmt.Printf("Opus conversion completed for directory: %s\n", rootDir)
+		},
+	}
+
 	// ---------- 参数配置 ----------
 
 	// version 命令无需额外参数
@@ -149,6 +160,9 @@ func main() {
 	// novel 命令参数
 	novelCmd.Flags().StringVarP(&rootDir, "dir", "d", ".", "Directory path to search for audio files")
 
+	// opus 命令参数
+	opusCmd.Flags().StringVarP(&rootDir, "dir", "d", ".", "Directory path to search for audio files")
+
 	// ---------- 注册命令 ----------
 	rootCmd.AddCommand(versionCmd)
 	rootCmd.AddCommand(videoCmd)
@@ -157,6 +171,7 @@ func main() {
 	rootCmd.AddCommand(rotateCmd)
 	rootCmd.AddCommand(imageCmd)
 	rootCmd.AddCommand(novelCmd)
+	rootCmd.AddCommand(opusCmd)
 
 	// ---------- 执行命令 ----------
 	if err := rootCmd.Execute(); err != nil {
