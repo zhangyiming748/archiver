@@ -18,3 +18,14 @@ func Novel(dir string) {
 		archive.ConvertAudio(f, archive.AudioBookType)
 	}
 }
+
+func Opus(dir string) {
+	fs := finder.FindAllAudios(dir)
+	for _, f := range fs {
+		if filepath.Ext(f)==".opus"{
+			fmt.Println("Skipping opus file:", f)
+			continue
+		}
+		archive.Convert2Opus(f)
+	}
+}

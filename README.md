@@ -19,7 +19,7 @@ Archiver 是一个命令行工具，用于媒体文件管理和格式转换。�
 ### 从 GitHub Releases 下载
 
 |平台|架构|下载链接|
-|:---:|:---:|:---:|
+|---|---|---|
 |Linux|amd64|[archiver_linux_amd64](https://github.com/zhangyiming748/archiver/releases/latest/download/archiver_linux_amd64)|
 |Linux|arm64|[archiver_linux_arm64](https://github.com/zhangyiming748/archiver/releases/latest/download/archiver_linux_arm64)|
 |macOS|amd64|[archiver_darwin_amd64](https://github.com/zhangyiming748/archiver/releases/latest/download/archiver_darwin_amd64)|
@@ -91,7 +91,7 @@ archiver video -d /path/to/videos --fhd --force
 **参数说明：**
 
 | 参数 | 简写 | 类型 | 默认值 | 说明 |
-|------|------|------|--------|------|
+| ------ | ------ | ------ | -------- | ------ |
 | `--dir` | `-d` | string | 必需 | 要搜索视频文件的目录路径 |
 | `--fhd` | `-f` | bool | false | 启用 FHD 模式进行视频转换 |
 | `--force` | - | bool | false | 强制覆盖已存在的文件，避免 FFmpeg 交互式确认 |
@@ -126,7 +126,7 @@ archiver mp4 -d /path/to/videos --fhd --force
 **参数说明：**
 
 | 参数 | 简写 | 类型 | 默认值 | 说明 |
-|------|------|------|--------|------|
+| ------ | ------ | ------ | -------- | ------ |
 | `--dir` | `-d` | string | 必需 | 要搜索视频文件的目录路径 |
 | `--fhd` | `-f` | bool | false | 启用 FHD 模式进行 MP4 转换 |
 | `--force` | - | bool | false | 强制覆盖已存在的文件 |
@@ -155,7 +155,7 @@ archiver smart -d /path/to/videos --fhd --force
 **参数说明：**
 
 | 参数 | 简写 | 类型 | 默认值 | 说明 |
-|------|------|------|--------|------|
+| ------ | ------ | ------ | -------- | ------ |
 | `--dir` | `-d` | string | 必需 | 要搜索视频文件的目录路径 |
 | `--fhd` | `-f` | bool | false | 启用 FHD 模式进行智能转换 |
 | `--force` | - | bool | false | 强制覆盖已存在的文件 |
@@ -182,7 +182,7 @@ archiver rotate -d /path/to/videos -r 90
 **参数说明：**
 
 | 参数 | 简写 | 类型 | 默认值 | 说明 |
-|------|------|------|--------|------|
+| ------ | ------ | ------ | -------- | ------ |
 | `--dir` | `-d` | string | `./` | 要旋转视频的目录路径 |
 | `--rotate` | `-r` | string | `90` | 旋转方向：90（顺时针90°）或 270（顺时针270°） |
 
@@ -218,7 +218,7 @@ archiver image -d /path/to/images --fhd --threads 8
 **参数说明：**
 
 | 参数 | 简写 | 类型 | 默认值 | 说明 |
-|------|------|------|--------|------|
+| ------ | ------ | ------ | -------- | ------ |
 | `--dir` | `-d` | string | 必需 | 要搜索图片文件的目录路径 |
 | `--fhd` | `-f` | bool | false | 启用 FHD 模式进行图片转换 |
 | `--threads` | `-t` | int | 4 | 用于转换的线程数 |
@@ -241,7 +241,7 @@ archiver novel -d /path/to/audio
 **参数说明：**
 
 | 参数 | 简写 | 类型 | 默认值 | 说明 |
-|------|------|------|--------|------|
+| ------ | ------ | ------ | -------- | ------ |
 | `--dir` | `-d` | string | `.` | 要搜索音频文件的目录路径 |
 
 **使用提示：**
@@ -361,7 +361,7 @@ Archiver 支持以下视频格式：
 以下是 Archiver 支持的所有子命令概览：
 
 | 命令 | 功能 | 主要参数 |
-|------|------|----------|
+| ------ | ------ | ---------- |
 | `archiver video` | 视频转 H265 格式 | `-d` (目录), `-f` (FHD), `--force` |
 | `archiver mp4` | 视频转 H265 MP4 格式 | `-d`, `-f`, `--force` |
 | `archiver smart` | 智能压缩视频 | `-d`, `-f`, `--force` |
