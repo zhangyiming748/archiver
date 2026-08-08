@@ -5,6 +5,9 @@ builds:
     binary: archiver
     env:
       - CGO_ENABLED=0
+    hooks:
+      pre:
+        - go mod tidy
     goos:
       - linux
       - darwin
