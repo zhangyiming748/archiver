@@ -8,6 +8,7 @@ import (
 
 	"github.com/spf13/cobra"
 
+	"github.com/zhangyiming748/archive"
 	"github.com/zhangyiming748/archiver/code"
 )
 
@@ -21,6 +22,15 @@ var (
 	force     bool        // 强制覆盖标志，是否覆盖已存在的文件
 	threads   int         // 线程数，用于控制并行处理的线程数量
 )
+
+// ========== 初始化函数 ==========
+
+// init 在项目启动时初始化必要的依赖
+// 例如:数据库连接、配置文件加载等
+func init() {
+	// 初始化 SQLite 数据库(用于处理进度记录)
+	archive.InitSqlte()
+}
 
 // ========== 命令创建区域 ==========
 
@@ -92,7 +102,7 @@ func main() {
 		},
 	}
 
-	// image 命令：将图片文件转换为 AVIF 格式
+	// image 命令:将图片文件转换为 AVIF 格式
 	var imageCmd = &cobra.Command{
 		Use:   "image",
 		Short: "Convert image files to AVIF format",
