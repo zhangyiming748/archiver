@@ -11,7 +11,7 @@ import (
 func Novel(dir string) {
 	fs := finder.FindAllAudios(dir)
 	for _, f := range fs {
-		if filepath.Ext(f)==".opus"{
+		if filepath.Ext(f) == ".opus" {
 			fmt.Println("Skipping opus file:", f)
 			continue
 		}
@@ -22,7 +22,7 @@ func Novel(dir string) {
 func Opus(dir string) {
 	fs := finder.FindAllAudios(dir)
 	for _, f := range fs {
-		if filepath.Ext(f)==".opus"{
+		if filepath.Ext(f) == ".opus" {
 			fmt.Println("Skipping opus file:", f)
 			continue
 		}
