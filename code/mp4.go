@@ -20,3 +20,18 @@ func FindVideoAndCovertMp4Immediately(root string, fhd, force bool) {
 		return nil
 	})
 }
+
+func FindVideoAndCovertHEVCImmediately(root string, fhd, force bool) {
+	filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return nil // 忽略错误，继续遍历
+		}
+		if !info.IsDir() {
+			absPath, _ := filepath.Abs(path)
+			if isVideo(absPath) {
+				archive.ReEncode2H265KeepContainer(absPath, fhd, force)
+			}
+		}
+		return nil
+	})
+}

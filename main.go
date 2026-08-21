@@ -78,6 +78,17 @@ func main() {
 		},
 	}
 
+	// hevc 命令：将视频文件重新编码为 HEVC 格式（保留原容器格式）
+	var hevcCmd = &cobra.Command{
+		Use:   "hevc",
+		Short: "Re-encode video files to HEVC format keeping original container",
+		Long:  "Find all video files in the specified directory and re-encode them to HEVC format keeping original container",
+		Run: func(cmd *cobra.Command, args []string) {
+			code.FindVideoAndCovertHEVCImmediately(rootDir, fhd, force)
+			fmt.Printf("HEVC conversion completed for directory: %s\n", rootDir)
+		},
+	}
+
 	// smart 命令：智能转换视频文件为更小的 H265 MP4 格式
 	var smartCmd = &cobra.Command{
 		Use:   "smart",
@@ -151,6 +162,12 @@ func main() {
 	mp4Cmd.Flags().BoolVar(&force, "force", false, "Force overwrite existing files")
 	mp4Cmd.MarkFlagRequired("dir")
 
+	// hevc 命令参数
+	hevcCmd.Flags().StringVarP(&rootDir, "dir", "d", "", "Directory path to search for video files")
+	hevcCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for HEVC conversion")
+	hevcCmd.Flags().BoolVar(&force, "force", false, "Force overwrite existing files")
+	hevcCmd.MarkFlagRequired("dir")
+
 	// smart 命令参数
 	smartCmd.Flags().StringVarP(&rootDir, "dir", "d", "", "Directory path to search for video files")
 	smartCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for smart MP4 conversion")
@@ -177,6 +194,7 @@ func main() {
 	rootCmd.AddCommand(versionCmd)
 	rootCmd.AddCommand(videoCmd)
 	rootCmd.AddCommand(mp4Cmd)
+	rootCmd.AddCommand(hevcCmd)
 	rootCmd.AddCommand(smartCmd)
 	rootCmd.AddCommand(rotateCmd)
 	rootCmd.AddCommand(imageCmd)

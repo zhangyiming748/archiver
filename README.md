@@ -6,6 +6,7 @@ Archiver 是一个命令行工具，用于媒体文件管理和格式转换。�
 
 - 🎬 **视频转换**：自动查找目录下的所有视频文件并转换为 H265 编码
 - 📹 **MP4 转换**：将视频文件转换为 H265 MP4 格式
+- 🎞️ **HEVC 重编码**：将视频重新编码为 HEVC 格式并保留原容器格式
 - 🧠 **智能压缩**：智能转换视频为更小的 H265 MP4 格式，节省存储空间
 - 🔄 **视频旋转**：支持顺时针旋转视频 90° 或 270°
 - 🖼️ **图片转换**：自动查找目录下的所有图片文件并转换为 AVIF 格式
@@ -129,6 +130,35 @@ archiver mp4 -d /path/to/videos --fhd --force
 | ------ | ------ | ------ | -------- | ------ |
 | `--dir` | `-d` | string | 必需 | 要搜索视频文件的目录路径 |
 | `--fhd` | `-f` | bool | false | 启用 FHD 模式进行 MP4 转换 |
+| `--force` | - | bool | false | 强制覆盖已存在的文件 |
+
+### HEVC 重编码（保留原容器）
+
+将指定目录下的所有视频文件重新编码为 HEVC 格式，保留原容器格式：
+
+```bash
+# 基本用法
+archiver hevc --dir ./videos
+
+# 简写形式
+archiver hevc -d ./videos
+
+# 启用 FHD 模式
+archiver hevc -d ./videos --fhd
+
+# 强制覆盖已存在的文件
+archiver hevc -d ./videos --force
+
+# 组合使用多个参数
+archiver hevc -d ./videos --fhd --force
+```
+
+**参数说明：**
+
+| 参数 | 简写 | 类型 | 默认值 | 说明 |
+| ------ | ------ | ------ | -------- | ------ |
+| `--dir` | `-d` | string | 必需 | 要搜索视频文件的目录路径 |
+| `--fhd` | `-f` | bool | false | 启用 FHD 模式进行 HEVC 转换 |
 | `--force` | - | bool | false | 强制覆盖已存在的文件 |
 
 ### 智能压缩转换
@@ -259,6 +289,9 @@ archiver video -d ~/Videos
 # 转换视频为 H265 MP4 格式并启用 FHD 模式和强制覆盖
 archiver mp4 -d ~/Videos --fhd --force
 
+# 重新编码视频为 HEVC 格式并保留原容器格式
+archiver hevc -d ./videos
+
 # 智能压缩视频以节省空间
 archiver smart -d ~/Videos --force
 
@@ -317,7 +350,7 @@ Archiver 支持以下视频格式：
 
 ### Q5: 转换后的文件命名规则是什么？
 
-- **视频转换（video/mp4/smart）**：直接替换原文件，不创建新文件
+- **视频转换（video/mp4/hevc/smart）**：直接替换原文件，不创建新文件
 - **图片转换**：直接替换原文件，不创建新文件
 - **视频旋转**：直接替换原文件，不创建新文件
 - **有声小说（novel）**：直接替换原文件，不创建新文件
@@ -337,6 +370,7 @@ Archiver 支持以下视频格式：
 
 - **`video`**：通用 H265 转换，适合大多数场景
 - **`mp4`**：转换为标准 H265 MP4 格式，兼容性更好
+- **`hevc`**：重新编码为 HEVC 格式并保留原容器格式
 - **`smart`**：智能压缩模式，在保持画质的前提下尽可能减小文件大小
 - **`rotate`**：仅旋转视频，不进行格式转换
 - **`novel`**：将音频文件转换为有声小说格式
@@ -364,6 +398,7 @@ Archiver 支持以下视频格式：
 | ------ | ------ | ---------- |
 | `archiver video` | 视频转 H265 格式 | `-d` (目录), `-f` (FHD), `--force` |
 | `archiver mp4` | 视频转 H265 MP4 格式 | `-d`, `-f`, `--force` |
+| `archiver hevc` | 视频重编码为 HEVC（保留原容器） | `-d`, `-f`, `--force` |
 | `archiver smart` | 智能压缩视频 | `-d`, `-f`, `--force` |
 | `archiver rotate` | 旋转视频角度 | `-d`, `-r` (90/270) |
 | `archiver image` | 图片转 AVIF 格式 | `-d`, `-f`, `-t` (线程数) |
