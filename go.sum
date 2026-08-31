@@ -53,6 +53,8 @@ github.com/zhangyiming748/FastMediaInfo v0.0.7 h1:ltIZphycCxY+Wyb6tWJODLEr9gQWm/
 github.com/zhangyiming748/FastMediaInfo v0.0.7/go.mod h1:vO7MyXVTh/P4DRIuBdFXP14kV5J54Jqemem+xtsC3HI=
 github.com/zhangyiming748/archive v0.4.4 h1:oQJZ9mpL/d5n/yKtnBwm9fw7kqBDbA+LJChRmYRR5ZM=
 github.com/zhangyiming748/archive v0.4.4/go.mod h1:+bOQd6XjtnkquOYimkn4bNQRty3v+dCOs0w/AczjuOQ=
+github.com/zhangyiming748/archive v0.4.5 h1:YY75Bh5GPUgZG6kJD3dvxB8UIIwYYlG9v+kQE5kbsZw=
+github.com/zhangyiming748/archive v0.4.5/go.mod h1:+bOQd6XjtnkquOYimkn4bNQRty3v+dCOs0w/AczjuOQ=
 github.com/zhangyiming748/finder v0.0.11 h1:3E/jo3icIutQxuAkac+V+/rWRQvggI2CJoTd1cMNCE4=
 github.com/zhangyiming748/finder v0.0.11/go.mod h1:92Nl48xt4VYxeyQIlYuxvhX+sCVba9SlKEWKMHzzDdA=
 github.com/zhangyiming748/stand v0.0.4 h1:BhSdOgTYeRVRP4C2Q0QFZdUzljvHfErGYhIZZD7qRWQ=
