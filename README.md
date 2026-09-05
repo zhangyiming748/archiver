@@ -87,13 +87,16 @@ archiver video -d /path/to/videos --force
 
 # 组合使用多个参数
 archiver video -d /path/to/videos --fhd --force
+
+# 省略 --dir，直接处理当前目录
+archiver video
 ```
 
 **参数说明：**
 
 | 参数 | 简写 | 类型 | 默认值 | 说明 |
 | ------ | ------ | ------ | -------- | ------ |
-| `--dir` | `-d` | string | 必需 | 要搜索视频文件的目录路径 |
+| `--dir` | `-d` | string | `.` | 要搜索视频文件的目录路径，默认为当前目录 |
 | `--fhd` | `-f` | bool | false | 启用 FHD 模式进行视频转换 |
 | `--force` | - | bool | false | 强制覆盖已存在的文件，避免 FFmpeg 交互式确认 |
 
@@ -122,13 +125,16 @@ archiver mp4 -d /path/to/videos --force
 
 # 组合使用多个参数
 archiver mp4 -d /path/to/videos --fhd --force
+
+# 省略 --dir，直接处理当前目录
+archiver mp4
 ```
 
 **参数说明：**
 
 | 参数 | 简写 | 类型 | 默认值 | 说明 |
 | ------ | ------ | ------ | -------- | ------ |
-| `--dir` | `-d` | string | 必需 | 要搜索视频文件的目录路径 |
+| `--dir` | `-d` | string | `.` | 要搜索视频文件的目录路径，默认为当前目录 |
 | `--fhd` | `-f` | bool | false | 启用 FHD 模式进行 MP4 转换 |
 | `--force` | - | bool | false | 强制覆盖已存在的文件 |
 
@@ -151,13 +157,16 @@ archiver hevc -d ./videos --force
 
 # 组合使用多个参数
 archiver hevc -d ./videos --fhd --force
+
+# 省略 --dir，直接处理当前目录
+archiver hevc
 ```
 
 **参数说明：**
 
 | 参数 | 简写 | 类型 | 默认值 | 说明 |
 | ------ | ------ | ------ | -------- | ------ |
-| `--dir` | `-d` | string | 必需 | 要搜索视频文件的目录路径 |
+| `--dir` | `-d` | string | `.` | 要搜索视频文件的目录路径，默认为当前目录 |
 | `--fhd` | `-f` | bool | false | 启用 FHD 模式进行 HEVC 转换 |
 | `--force` | - | bool | false | 强制覆盖已存在的文件 |
 
@@ -180,13 +189,16 @@ archiver smart -d /path/to/videos --force
 
 # 组合使用多个参数
 archiver smart -d /path/to/videos --fhd --force
+
+# 省略 --dir，直接处理当前目录
+archiver smart
 ```
 
 **参数说明：**
 
 | 参数 | 简写 | 类型 | 默认值 | 说明 |
 | ------ | ------ | ------ | -------- | ------ |
-| `--dir` | `-d` | string | 必需 | 要搜索视频文件的目录路径 |
+| `--dir` | `-d` | string | `.` | 要搜索视频文件的目录路径，默认为当前目录 |
 | `--fhd` | `-f` | bool | false | 启用 FHD 模式进行智能转换 |
 | `--force` | - | bool | false | 强制覆盖已存在的文件 |
 
@@ -207,13 +219,16 @@ archiver rotate -d /path/to/videos -r 270
 
 # 完整示例
 archiver rotate -d /path/to/videos -r 90
+
+# 省略 --dir，直接旋转当前目录的视频
+archiver rotate -r 90
 ```
 
 **参数说明：**
 
 | 参数 | 简写 | 类型 | 默认值 | 说明 |
 | ------ | ------ | ------ | -------- | ------ |
-| `--dir` | `-d` | string | `./` | 要旋转视频的目录路径 |
+| `--dir` | `-d` | string | `.` | 要旋转视频的目录路径，默认为当前目录 |
 | `--rotate` | `-r` | string | `90` | 旋转方向：90（顺时针90°）或 270（顺时针270°） |
 
 **使用提示：**
@@ -243,13 +258,16 @@ archiver image -d /path/to/images -t 8
 
 # 组合使用多个参数
 archiver image -d /path/to/images --fhd --threads 8
+
+# 省略 --dir，直接处理当前目录
+archiver image
 ```
 
 **参数说明：**
 
 | 参数 | 简写 | 类型 | 默认值 | 说明 |
 | ------ | ------ | ------ | -------- | ------ |
-| `--dir` | `-d` | string | 必需 | 要搜索图片文件的目录路径 |
+| `--dir` | `-d` | string | `.` | 要搜索图片文件的目录路径，默认为当前目录 |
 | `--fhd` | `-f` | bool | false | 启用 FHD 模式进行图片转换 |
 | `--threads` | `-t` | int | 4 | 用于转换的线程数 |
 
@@ -272,7 +290,7 @@ archiver novel -d /path/to/audio
 
 | 参数 | 简写 | 类型 | 默认值 | 说明 |
 | ------ | ------ | ------ | -------- | ------ |
-| `--dir` | `-d` | string | `.` | 要搜索音频文件的目录路径 |
+| `--dir` | `-d` | string | `.` | 要搜索音频文件的目录路径，默认为当前目录 |
 
 **使用提示：**
 

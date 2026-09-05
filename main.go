@@ -152,31 +152,26 @@ func main() {
 	// version 命令无需额外参数
 
 	// video 命令参数
-	videoCmd.Flags().StringVarP(&rootDir, "dir", "d", "", "Directory path to search for video files")
+	videoCmd.Flags().StringVarP(&rootDir, "dir", "d", ".", "Directory path to search for video files")
 	videoCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for video conversion")
 	videoCmd.Flags().BoolVar(&force, "force", false, "Force overwrite existing files")
-	videoCmd.MarkFlagRequired("dir")
 
 	// mp4 命令参数
-	mp4Cmd.Flags().StringVarP(&rootDir, "dir", "d", "", "Directory path to search for video files")
+	mp4Cmd.Flags().StringVarP(&rootDir, "dir", "d", ".", "Directory path to search for video files")
 	mp4Cmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for MP4 conversion")
 	mp4Cmd.Flags().BoolVar(&force, "force", false, "Force overwrite existing files")
 	mp4Cmd.Flags().IntVarP(&limit, "limit", "l", 0, "Limit the number of videos to process (0 means process all)")
-	//mp4Cmd.MarkFlagRequired("dir")
 
 	// hevc 命令参数
-	hevcCmd.Flags().StringVarP(&rootDir, "dir", "d", "./", "Directory path to search for video files")
+	hevcCmd.Flags().StringVarP(&rootDir, "dir", "d", ".", "Directory path to search for video files")
 	hevcCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for HEVC conversion")
 	hevcCmd.Flags().BoolVar(&force, "force", false, "Force overwrite existing files")
 	hevcCmd.Flags().IntVarP(&limit, "limit", "l", 0, "Limit the number of videos to process (0 means process all)")
 
-	//hevcCmd.MarkFlagRequired("dir")
-
 	// smart 命令参数
-	smartCmd.Flags().StringVarP(&rootDir, "dir", "d", "", "Directory path to search for video files")
+	smartCmd.Flags().StringVarP(&rootDir, "dir", "d", ".", "Directory path to search for video files")
 	smartCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for smart MP4 conversion")
 	smartCmd.Flags().BoolVar(&force, "force", false, "Force overwrite existing files")
-	smartCmd.MarkFlagRequired("dir")
 
 	// rotate 命令参数
 	rotateCmd.Flags().StringP("dir", "d", ".", "Directory path for video rotation")
@@ -187,7 +182,6 @@ func main() {
 	imageCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for image conversion")
 	imageCmd.Flags().IntVarP(&threads, "threads", "t", 4, "Number of threads to use for conversion")
 	imageCmd.Flags().IntVarP(&limit, "limit", "l", 0, "Limit the number of images to process (0 means process all)")
-	//imageCmd.MarkFlagRequired("dir")
 
 	// novel 命令参数
 	novelCmd.Flags().StringVarP(&rootDir, "dir", "d", ".", "Directory path to search for audio files")
