@@ -120,7 +120,7 @@ func main() {
 		Short: "Convert image files to AVIF format",
 		Long:  "Find all image files in the specified directory and convert them to AVIF format",
 		Run: func(cmd *cobra.Command, args []string) {
-			code.FindImageAndCovertImmediately(rootDir, threads)
+			code.FindImageAndCovertImmediately(rootDir, threads, limit)
 			fmt.Printf("Image conversion completed for directory: %s\n", rootDir)
 		},
 	}
@@ -186,6 +186,7 @@ func main() {
 	imageCmd.Flags().StringVarP(&rootDir, "dir", "d", ".", "Directory path to search for image files")
 	imageCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for image conversion")
 	imageCmd.Flags().IntVarP(&threads, "threads", "t", 4, "Number of threads to use for conversion")
+	imageCmd.Flags().IntVarP(&limit, "limit", "l", 0, "Limit the number of images to process (0 means process all)")
 	//imageCmd.MarkFlagRequired("dir")
 
 	// novel 命令参数

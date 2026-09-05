@@ -9,7 +9,8 @@ import (
 	"github.com/zhangyiming748/archive"
 )
 
-func FindImageAndCovertImmediately(root string, threads int) {
+func FindImageAndCovertImmediately(root string, threads int, limit int) {
+	count := 0
 	filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return nil // 忽略错误，继续遍历
@@ -19,6 +20,11 @@ func FindImageAndCovertImmediately(root string, threads int) {
 			if isImage(absPath) {
 				if err := archive.Convert2AVIF(absPath, threads); err != nil {
 					log.Printf("文件%s在处理的时候出现了错误:%v\n", absPath, err)
+				}
+				count++
+				// limit 大于 0 时限制处理数量，等于 0 时处理所有图片
+				if limit > 0 && count >= limit {
+					return filepath.SkipAll
 				}
 			}
 		}
