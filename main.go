@@ -20,6 +20,7 @@ var (
 	rootDir   string      // 根目录路径，用于指定要处理的文件目录
 	fhd       bool        // FHD 模式标志，启用全高清视频处理
 	force     bool        // 强制覆盖标志，是否覆盖已存在的文件
+	limit     int         // 处理数量限制，0 表示处理所有视频
 	threads   int         // 线程数，用于控制并行处理的线程数量
 )
 
@@ -84,7 +85,7 @@ func main() {
 		Short: "Re-encode video files to HEVC format keeping original container",
 		Long:  "Find all video files in the specified directory and re-encode them to HEVC format keeping original container",
 		Run: func(cmd *cobra.Command, args []string) {
-			code.FindVideoAndCovertHEVCImmediately(rootDir, fhd, force)
+			code.FindVideoAndCovertHEVCImmediately(rootDir, fhd, force, limit)
 			fmt.Printf("HEVC conversion completed for directory: %s\n", rootDir)
 		},
 	}
@@ -163,10 +164,12 @@ func main() {
 	mp4Cmd.MarkFlagRequired("dir")
 
 	// hevc 命令参数
-	hevcCmd.Flags().StringVarP(&rootDir, "dir", "d", "", "Directory path to search for video files")
+	hevcCmd.Flags().StringVarP(&rootDir, "dir", "d", "./", "Directory path to search for video files")
 	hevcCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for HEVC conversion")
 	hevcCmd.Flags().BoolVar(&force, "force", false, "Force overwrite existing files")
-	hevcCmd.MarkFlagRequired("dir")
+	hevcCmd.Flags().IntVarP(&limit, "limit", "l", 0, "Limit the number of videos to process (0 means process all)")
+
+	//hevcCmd.MarkFlagRequired("dir")
 
 	// smart 命令参数
 	smartCmd.Flags().StringVarP(&rootDir, "dir", "d", "", "Directory path to search for video files")
