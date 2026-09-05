@@ -74,7 +74,7 @@ func main() {
 		Short: "Convert video files to H265 MP4 format",
 		Long:  "Find all video files in the specified directory and convert them to H265 MP4 format",
 		Run: func(cmd *cobra.Command, args []string) {
-			code.FindVideoAndCovertMp4Immediately(rootDir, fhd, force)
+			code.FindVideoAndCovertMp4Immediately(rootDir, fhd, force, limit)
 			fmt.Printf("MP4 conversion completed for directory: %s\n", rootDir)
 		},
 	}
@@ -161,7 +161,8 @@ func main() {
 	mp4Cmd.Flags().StringVarP(&rootDir, "dir", "d", "", "Directory path to search for video files")
 	mp4Cmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for MP4 conversion")
 	mp4Cmd.Flags().BoolVar(&force, "force", false, "Force overwrite existing files")
-	mp4Cmd.MarkFlagRequired("dir")
+	mp4Cmd.Flags().IntVarP(&limit, "limit", "l", 0, "Limit the number of videos to process (0 means process all)")
+	//mp4Cmd.MarkFlagRequired("dir")
 
 	// hevc 命令参数
 	hevcCmd.Flags().StringVarP(&rootDir, "dir", "d", "./", "Directory path to search for video files")
@@ -178,14 +179,14 @@ func main() {
 	smartCmd.MarkFlagRequired("dir")
 
 	// rotate 命令参数
-	rotateCmd.Flags().StringP("dir", "d", "./", "Directory path for video rotation")
+	rotateCmd.Flags().StringP("dir", "d", ".", "Directory path for video rotation")
 	rotateCmd.Flags().StringP("rotate", "r", "90", "Rotation direction: 90, 270")
 
 	// image 命令参数
-	imageCmd.Flags().StringVarP(&rootDir, "dir", "d", "", "Directory path to search for image files")
+	imageCmd.Flags().StringVarP(&rootDir, "dir", "d", ".", "Directory path to search for image files")
 	imageCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for image conversion")
 	imageCmd.Flags().IntVarP(&threads, "threads", "t", 4, "Number of threads to use for conversion")
-	imageCmd.MarkFlagRequired("dir")
+	//imageCmd.MarkFlagRequired("dir")
 
 	// novel 命令参数
 	novelCmd.Flags().StringVarP(&rootDir, "dir", "d", ".", "Directory path to search for audio files")
