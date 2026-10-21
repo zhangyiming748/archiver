@@ -51,12 +51,8 @@ github.com/stretchr/testify v1.9.0 h1:HtqpIVDClZ4nwg75+f6Lvsy/wHu+3BoSGCbBAcpTsT
 github.com/stretchr/testify v1.9.0/go.mod h1:r2ic/lqez/lEtzL7wO/rwa5dbSLXVDPFyf8C91i36aY=
 github.com/zhangyiming748/FastMediaInfo v0.0.7 h1:ltIZphycCxY+Wyb6tWJODLEr9gQWm/o4/HeOYBbhtAE=
 github.com/zhangyiming748/FastMediaInfo v0.0.7/go.mod h1:vO7MyXVTh/P4DRIuBdFXP14kV5J54Jqemem+xtsC3HI=
-github.com/zhangyiming748/archive v0.4.4 h1:oQJZ9mpL/d5n/yKtnBwm9fw7kqBDbA+LJChRmYRR5ZM=
-github.com/zhangyiming748/archive v0.4.4/go.mod h1:+bOQd6XjtnkquOYimkn4bNQRty3v+dCOs0w/AczjuOQ=
-github.com/zhangyiming748/archive v0.4.5 h1:YY75Bh5GPUgZG6kJD3dvxB8UIIwYYlG9v+kQE5kbsZw=
-github.com/zhangyiming748/archive v0.4.5/go.mod h1:+bOQd6XjtnkquOYimkn4bNQRty3v+dCOs0w/AczjuOQ=
-github.com/zhangyiming748/archive v0.4.6 h1:r9vPfYJF3k/ogL3XrlPiV9gAo0GnuJTT4dPtqzXphHk=
-github.com/zhangyiming748/archive v0.4.6/go.mod h1:+bOQd6XjtnkquOYimkn4bNQRty3v+dCOs0w/AczjuOQ=
+github.com/zhangyiming748/archive v0.5.0 h1:YSaWyYfPauhOYmYVTAgqBWZX7zDXZwIbmf6X0tWpIuM=
+github.com/zhangyiming748/archive v0.5.0/go.mod h1:+bOQd6XjtnkquOYimkn4bNQRty3v+dCOs0w/AczjuOQ=
 github.com/zhangyiming748/finder v0.0.11 h1:3E/jo3icIutQxuAkac+V+/rWRQvggI2CJoTd1cMNCE4=
 github.com/zhangyiming748/finder v0.0.11/go.mod h1:92Nl48xt4VYxeyQIlYuxvhX+sCVba9SlKEWKMHzzDdA=
 github.com/zhangyiming748/stand v0.0.4 h1:BhSdOgTYeRVRP4C2Q0QFZdUzljvHfErGYhIZZD7qRWQ=

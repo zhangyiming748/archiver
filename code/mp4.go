@@ -29,7 +29,7 @@ func FindVideoAndCovertMp4Immediately(root string, fhd, force bool, limit int) {
 	})
 }
 
-func FindVideoAndCovertHEVCImmediately(root string, fhd, force bool, limit int) {
+func FindVideoAndCovertHEVCImmediately(root string, fhd, force bool, limit int, cpuLimit int) {
 	count := 0
 	filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
@@ -38,7 +38,7 @@ func FindVideoAndCovertHEVCImmediately(root string, fhd, force bool, limit int) 
 		if !info.IsDir() {
 			absPath, _ := filepath.Abs(path)
 			if isVideo(absPath) {
-				if archive.ReEncode2H265KeepContainer(absPath, fhd, force){
+				if archive.ReEncode2H265KeepContainer(absPath, fhd, force, cpuLimit) {
 					count++
 				}
 				// limit 大于 0 时限制处理数量，等于 0 时处理所有视频

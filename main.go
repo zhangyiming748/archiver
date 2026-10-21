@@ -22,6 +22,7 @@ var (
 	force     bool        // 强制覆盖标志，是否覆盖已存在的文件
 	limit     int         // 处理数量限制，0 表示处理所有视频
 	threads   int         // 线程数，用于控制并行处理的线程数量
+	cpuLimit  int         // FFmpeg CPU 线程限制，0 表示不限制（使用所有核心）
 )
 
 // ========== 初始化函数 ==========
@@ -63,7 +64,7 @@ func main() {
 		Short: "Convert video files to H265 format",
 		Long:  "Find all video files in the specified directory and convert them to H265 format",
 		Run: func(cmd *cobra.Command, args []string) {
-			code.FindVideoAndCovertImmediately(rootDir, fhd, force)
+			code.FindVideoAndCovertImmediately(rootDir, fhd, force, cpuLimit)
 			fmt.Printf("Video conversion completed for directory: %s\n", rootDir)
 		},
 	}
@@ -85,7 +86,7 @@ func main() {
 		Short: "Re-encode video files to HEVC format keeping original container",
 		Long:  "Find all video files in the specified directory and re-encode them to HEVC format keeping original container",
 		Run: func(cmd *cobra.Command, args []string) {
-			code.FindVideoAndCovertHEVCImmediately(rootDir, fhd, force, limit)
+			code.FindVideoAndCovertHEVCImmediately(rootDir, fhd, force, limit, cpuLimit)
 			fmt.Printf("HEVC conversion completed for directory: %s\n", rootDir)
 		},
 	}
@@ -155,6 +156,7 @@ func main() {
 	videoCmd.Flags().StringVarP(&rootDir, "dir", "d", ".", "Directory path to search for video files")
 	videoCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for video conversion")
 	videoCmd.Flags().BoolVar(&force, "force", false, "Force overwrite existing files")
+	videoCmd.Flags().IntVarP(&cpuLimit, "cpu-limit", "c", 0, "FFmpeg CPU thread limit (0 means no limit, use all cores)")
 
 	// mp4 命令参数
 	mp4Cmd.Flags().StringVarP(&rootDir, "dir", "d", ".", "Directory path to search for video files")
@@ -167,6 +169,7 @@ func main() {
 	hevcCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for HEVC conversion")
 	hevcCmd.Flags().BoolVar(&force, "force", false, "Force overwrite existing files")
 	hevcCmd.Flags().IntVarP(&limit, "limit", "l", 0, "Limit the number of videos to process (0 means process all)")
+	hevcCmd.Flags().IntVarP(&cpuLimit, "cpu-limit", "c", 0, "FFmpeg CPU thread limit (0 means no limit, use all cores)")
 
 	// smart 命令参数
 	smartCmd.Flags().StringVarP(&rootDir, "dir", "d", ".", "Directory path to search for video files")
