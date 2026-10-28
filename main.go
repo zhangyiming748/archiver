@@ -23,6 +23,7 @@ var (
 	limit     int         // 处理数量限制，0 表示处理所有视频
 	threads   int         // 线程数，用于控制并行处理的线程数量
 	cpuLimit  int         // FFmpeg CPU 线程限制，0 表示不限制（使用所有核心）
+	hevcMode  bool        // HEVC 模式标志，用于 all 命令中替代 mp4 运行 hevc 子命令
 )
 
 // ========== 初始化函数 ==========
@@ -148,6 +149,25 @@ func main() {
 		},
 	}
 
+	// all 命令：同时运行视频转换（mp4 或 hevc）和图片转换
+	var allCmd = &cobra.Command{
+		Use:   "all",
+		Short: "Run video and image conversion together",
+		Long:  "Run MP4 (or HEVC with --hevc) video conversion and image AVIF conversion on the same directory",
+		Run: func(cmd *cobra.Command, args []string) {
+			if hevcMode {
+				fmt.Println("[all] Running HEVC video conversion...")
+				code.FindVideoAndCovertHEVCImmediately(rootDir, fhd, force, limit, cpuLimit)
+			} else {
+				fmt.Println("[all] Running MP4 video conversion...")
+				code.FindVideoAndCovertMp4Immediately(rootDir, fhd, force, limit)
+			}
+			fmt.Println("[all] Running image AVIF conversion...")
+			code.FindImageAndCovertImmediately(rootDir, threads, limit)
+			fmt.Printf("All conversions completed for directory: %s\n", rootDir)
+		},
+	}
+
 	// ---------- 参数配置 ----------
 
 	// version 命令无需额外参数
@@ -192,6 +212,15 @@ func main() {
 	// opus 命令参数
 	opusCmd.Flags().StringVarP(&rootDir, "dir", "d", ".", "Directory path to search for audio files")
 
+	// all 命令参数
+	allCmd.Flags().StringVarP(&rootDir, "dir", "d", ".", "Directory path to search for media files")
+	allCmd.Flags().BoolVarP(&fhd, "fhd", "f", false, "Enable FHD mode for video conversion")
+	allCmd.Flags().BoolVar(&force, "force", false, "Force overwrite existing files")
+	allCmd.Flags().IntVarP(&limit, "limit", "l", 0, "Limit the number of files to process (0 means process all)")
+	allCmd.Flags().IntVarP(&threads, "threads", "t", 4, "Number of threads for image conversion")
+	allCmd.Flags().IntVarP(&cpuLimit, "cpu-limit", "c", 0, "FFmpeg CPU thread limit for HEVC mode (0 means no limit)")
+	allCmd.Flags().BoolVar(&hevcMode, "hevc", false, "Use HEVC video conversion instead of MP4")
+
 	// ---------- 注册命令 ----------
 	rootCmd.AddCommand(versionCmd)
 	rootCmd.AddCommand(videoCmd)
@@ -202,6 +231,7 @@ func main() {
 	rootCmd.AddCommand(imageCmd)
 	rootCmd.AddCommand(novelCmd)
 	rootCmd.AddCommand(opusCmd)
+	rootCmd.AddCommand(allCmd)
 
 	// ---------- 执行命令 ----------
 	if err := rootCmd.Execute(); err != nil {

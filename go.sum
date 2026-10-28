@@ -53,8 +53,8 @@ github.com/zhangyiming748/FastMediaInfo v0.0.7 h1:ltIZphycCxY+Wyb6tWJODLEr9gQWm/
 github.com/zhangyiming748/FastMediaInfo v0.0.7/go.mod h1:vO7MyXVTh/P4DRIuBdFXP14kV5J54Jqemem+xtsC3HI=
 github.com/zhangyiming748/archive v0.5.0 h1:YSaWyYfPauhOYmYVTAgqBWZX7zDXZwIbmf6X0tWpIuM=
 github.com/zhangyiming748/archive v0.5.0/go.mod h1:+bOQd6XjtnkquOYimkn4bNQRty3v+dCOs0w/AczjuOQ=
-github.com/zhangyiming748/finder v0.0.11 h1:3E/jo3icIutQxuAkac+V+/rWRQvggI2CJoTd1cMNCE4=
-github.com/zhangyiming748/finder v0.0.11/go.mod h1:92Nl48xt4VYxeyQIlYuxvhX+sCVba9SlKEWKMHzzDdA=
+github.com/zhangyiming748/finder v0.0.13 h1:51lUKk7fYsqHGCZztykVPgLnZ30WWd+po/XoMn6+i5U=
+github.com/zhangyiming748/finder v0.0.13/go.mod h1:92Nl48xt4VYxeyQIlYuxvhX+sCVba9SlKEWKMHzzDdA=
 github.com/zhangyiming748/stand v0.0.4 h1:BhSdOgTYeRVRP4C2Q0QFZdUzljvHfErGYhIZZD7qRWQ=
 github.com/zhangyiming748/stand v0.0.4/go.mod h1:w+oNJQxKSbk1oYr+DuC+woAFQAApX9VYRN7+jelMQq8=
 go.yaml.in/yaml/v3 v3.0.4/go.mod h1:DhzuOOF2ATzADvBadXxruRBLzYTpT36CKvDb3+aBEFg=

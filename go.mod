@@ -6,7 +6,7 @@ require (
 	github.com/h2non/filetype v1.1.3
 	github.com/spf13/cobra v1.10.2
 	github.com/zhangyiming748/archive v0.5.0
-	github.com/zhangyiming748/finder v0.0.11
+	github.com/zhangyiming748/finder v0.0.13
 )
 
 require (
