@@ -60,10 +60,14 @@ github.com/zhangyiming748/archive v0.5.0 h1:YSaWyYfPauhOYmYVTAgqBWZX7zDXZwIbmf6X
 github.com/zhangyiming748/archive v0.5.0/go.mod h1:+bOQd6XjtnkquOYimkn4bNQRty3v+dCOs0w/AczjuOQ=
 github.com/zhangyiming748/archive v0.5.1 h1:wLthPBGZtjVsPMBMP8WPtcKxrtjHVOZ8kkrBA0oTIds=
 github.com/zhangyiming748/archive v0.5.1/go.mod h1:+bOQd6XjtnkquOYimkn4bNQRty3v+dCOs0w/AczjuOQ=
+github.com/zhangyiming748/archive v0.5.2 h1:rljoWCfS2lhxy8cjmzfQuOXianINK6ExRP1ZW+AJJEU=
+github.com/zhangyiming748/archive v0.5.2/go.mod h1:qCMDF1OX/GjcuU4E2gjc/NO7GS06iMOr2U9luFaC2vo=
 github.com/zhangyiming748/finder v0.0.13 h1:51lUKk7fYsqHGCZztykVPgLnZ30WWd+po/XoMn6+i5U=
 github.com/zhangyiming748/finder v0.0.13/go.mod h1:92Nl48xt4VYxeyQIlYuxvhX+sCVba9SlKEWKMHzzDdA=
 github.com/zhangyiming748/stand v0.0.4 h1:BhSdOgTYeRVRP4C2Q0QFZdUzljvHfErGYhIZZD7qRWQ=
 github.com/zhangyiming748/stand v0.0.4/go.mod h1:w+oNJQxKSbk1oYr+DuC+woAFQAApX9VYRN7+jelMQq8=
+github.com/zhangyiming748/stand v0.0.5 h1:lXqwZYPrAajuBgqV6N8eh6uCt6qFqOgoerVKjDXbpzM=
+github.com/zhangyiming748/stand v0.0.5/go.mod h1:w+oNJQxKSbk1oYr+DuC+woAFQAApX9VYRN7+jelMQq8=
 go.yaml.in/yaml/v3 v3.0.4/go.mod h1:DhzuOOF2ATzADvBadXxruRBLzYTpT36CKvDb3+aBEFg=
 golang.org/x/mod v0.38.0 h1:MECBjubtXD7yj4HrhIUcywNaGeNVUdfVnxmPajOk4yk=
 golang.org/x/mod v0.38.0/go.mod h1:V6Xz0pq8TQ3dGqVQ1FVHuelZpAL0uNhSkk9ogYP3c40=

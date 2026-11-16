@@ -5,7 +5,7 @@ go 1.26.3
 require (
 	github.com/h2non/filetype v1.1.3
 	github.com/spf13/cobra v1.10.2
-	github.com/zhangyiming748/archive v0.5.1
+	github.com/zhangyiming748/archive v0.5.2
 	github.com/zhangyiming748/finder v0.0.13
 )
 
@@ -25,7 +25,7 @@ require (
 	github.com/schollz/progressbar/v3 v3.19.1 // indirect
 	github.com/spf13/pflag v1.0.10 // indirect
 	github.com/zhangyiming748/FastMediaInfo v0.0.7 // indirect
-	github.com/zhangyiming748/stand v0.0.4 // indirect
+	github.com/zhangyiming748/stand v0.0.5 // indirect
 	golang.org/x/sys v0.49.0 // indirect
 	golang.org/x/term v0.47.0 // indirect
 	golang.org/x/text v0.43.0 // indirect
